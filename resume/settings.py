@@ -71,7 +71,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'resume.wsgi.application'
 
-
+MENU_SELECT_PARENTS = True
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 

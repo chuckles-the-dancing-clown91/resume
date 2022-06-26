@@ -30,6 +30,7 @@ class Employer(models.Model):
     date_start = models.DateField(null=True)
     date_end = models.DateField(null=True)
     description = models.TextField()
+    short_description = models.CharField(max_length=250, null=True)
     contact = models.ForeignKey(Contact, on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
