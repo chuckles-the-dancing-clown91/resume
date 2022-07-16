@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -19,8 +19,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
+djsecret = os.getenv('DJ_SECRET')
+
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-je+f0#ld=*mm=y*bw+fewb*1ygc&pmtent&tlj9-+4@a@!(nrt'
+SECRET_KEY = djsecret
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -69,8 +71,8 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'resume.wsgi.application'
-
+# WSGI_APPLICATION = 'resume.wsgi.application'
+ASGI_APPLICATION = 'resume.asgi.application'
 MENU_SELECT_PARENTS = True
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
